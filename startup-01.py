@@ -19,7 +19,6 @@ def calculator(num1, operation, num2):
             raise gr.Error("Cannot divide by zero!")
         return num1 / num2
     elif operation == "modulus":
-        return num1 % num2
         # &&&
         pass
     elif operation == "exp":
