@@ -19,25 +19,46 @@ def calculator(num1, operation, num2):
             raise gr.Error("Cannot divide by zero!")
         return num1 / num2
     elif operation == "modulus":
-        # &&&
-        pass
+        return num1 % num2
     elif operation == "exp":
-        # &&&
-        pass
+        return num1 ** num2
     elif operation == "less":
         if num1 < num2:
             return 1
         else:
             return 0
     elif operation == "leq":
-        pass
+        if num1 <= num2:
+            return 1
+        else:
+            return 0
+    elif operation == "more":
+        if num1 > num2:
+            return 1
+        else:
+            return 0
+    elif operation == "meq":
+        if num1 >= num2:
+            return 1
+        else:
+            return 0
+    elif operation == "equal":
+        if num1 == num2:
+            return 1
+        else:
+            return 0
+    elif operation == "neq":
+        if num1 != num2:
+            return 1
+        else:
+            return 0
 
 demo = gr.Interface(
     calculator,
     [
         "number", 
         # gr.Radio(["add", "subtract", "multiply", "divide"),       # 原始語句
-        gr.Radio(["add", "subtract", "multiply", "divide", "modulus", "exp", "less", "leq", ]),     # 添加功能后的語句
+        gr.Radio(["add", "subtract", "multiply", "divide", "modulus", "exp", "less", "leq", "more", "meq", "equal", "neq" ]),     # 添加功能后的語句
         "number"
     ],
     "number",
