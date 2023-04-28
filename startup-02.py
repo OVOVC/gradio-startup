@@ -2,28 +2,33 @@ import numpy as np
 
 
 def ToNumpyArray(list):
-    pass
-    return 0
+    return np.array(list)
 
 
 def InvThenDot(a, b):
-    pass
-    return 0
+    A = np.invert(a)
+    B = np.invert(b)
+    return np.dot(A, B)
 
 
 def TakeFirstTwo(x):
-    pass
-    return 0
+    x = x[:2]
+    return x
 
 
 def TakeLastTwo(x):
-    pass
-    return 0
+    #length = len(x)
+    #x = x[length-2:length]
+    x = x[-2:]
+    return x
 
 
 def PolynomialTransform(x, degree):
-    pass
-    return 0
+    new_trans = []
+    for i in range(degree):
+        new_trans.append(x[0]**(i+1))
+        new_trans.append(x[1]**(i+1))
+    return np.array(new_trans)
 
 
 if __name__ == "__main__":
